@@ -1,3 +1,7 @@
+# Plunker
+
+  This code can be found on [plunker](https://embed.plnkr.co/github/eggheadio-projects/egghead-wikipedia-demo/angular-2-building-an-instant-search-with-angular-2-building-fully-reactive-apis?show=src%2Fapp%2Flist.component.ts,preview).
+
 # WikiSearch
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.10.
