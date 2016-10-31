@@ -21,7 +21,11 @@ export class AppComponent {
     this.term$
         .debounceTime(400)
         .distinctUntilChanged()
-        .flatMap(term => this.service.search(term))
-        .subscribe(results => this.items = results);
+        .subscribe(term => this.search(term))
+  }
+
+  search(term: string) {
+    this.service.search(term)
+                .subscribe(results => this.items = results);
   }
 }
