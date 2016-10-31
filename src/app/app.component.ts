@@ -3,7 +3,6 @@ import { WikipediaSearchService } from './wikipedia-search.service';
 import { Subject } from 'rxjs/Subject';
 //application wide shared Rx operators
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/debounceTime';
 
 @Component({
   moduleId: module.id,
@@ -17,7 +16,6 @@ export class AppComponent {
   constructor(private service:WikipediaSearchService) {
     
     this.term$
-        .debounceTime(400)
         .subscribe(term => this.search(term))
   }
 

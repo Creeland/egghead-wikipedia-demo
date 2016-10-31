@@ -13,12 +13,7 @@ export class WikipediaSearchService {
     search.set('search', term);
     search.set('format', 'json');
 
-    let obs = this.jsonp.get('http://en.wikipedia.org/w/api.php?callback=JSONP_CALLBACK', {search})
+    return this.jsonp.get('http://en.wikipedia.org/w/api.php?callback=JSONP_CALLBACK', {search})
                .map(response => response.json()[1]);
-    if (term.length === 2) {
-      obs = obs.delay(1000)
-    }
-
-    return obs;
   }
 }
