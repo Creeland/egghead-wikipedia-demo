@@ -8,12 +8,10 @@
 
   <base href="./">
 
-
-  <link rel="stylesheet"
-        href="./src/styles.css">
   <script src="https://unpkg.com/core-js/client/shim.min.js"></script>
   <script src="https://unpkg.com/reflect-metadata@0.1.3"></script>
   <script src="https://unpkg.com/systemjs@0.19.38/dist/system.src.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.6.26/zone.min.js"></script>
   <script>
     const app = {'app': './src/app', 'src':'./src'};
     const npm = 'https://unpkg.com';
@@ -44,25 +42,20 @@
         defaultExtension: 'js'
       }
     };
-
     const browserCompiler = {
       'ts': `${npm}/plugin-typescript@5.1.2/lib/plugin.js`,
       'typescript': `${npm}/typescript@2.0.2/lib/typescript.js`,
     };
-
     const dependencies = fetch('./package.json')
       .then(pkg => pkg.json())
       .then(body => body.dependencies);
-
     dependencies.then(deps => {
       const depInfo = Object.keys(deps)
         .map(key => ({pkg: key, org: key.split('/')[0], repo: key.split('/')[1], version: deps[key]}));
-
       const ngInfo = depInfo.filter(info => info.org === '@angular')
         .reduce((acc, {pkg, org, repo, version}) => Object.assign(acc, {
           [`${pkg}`]: `${npm}/${pkg}@${version}/bundles/${repo}.umd.js`
         }), {});
-
       const libInfo = depInfo
         .filter(info => info.org !== '@angular')
         .filter(info => info.org !== 'core-js')
@@ -71,7 +64,6 @@
         .reduce((acc, {pkg, org, repo, version}) => Object.assign(acc, {
           [`${pkg}`]: `${npm}/${pkg}@${version}`
         }), {});
-
       return {
         paths:{
           'zone.js/*':'https://unpkg.com/zone.js@0.6.23?main=browser',
