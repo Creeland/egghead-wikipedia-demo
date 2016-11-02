@@ -1,6 +1,6 @@
 # Plunker
 
-This code can be found on [plunker](https://embed.plnkr.co/github/eggheadio-projects/egghead-wikipedia-demo/angular-2-building-an-instant-search-with-angular-2-consuming-events-as-observables?preview=plnkr.html&show=src%2Fapp%2Fapp.component.ts,preview)
+This code can be found on [plunker](https://embed.plnkr.co/github/eggheadio-projects/egghead-wikipedia-demo/angular-2-building-an-instant-search-with-angular-2-preventing-unnecessary-requests?preview=plnkr.html&show=src%2Fapp%2Fapp.component.ts,preview)
 
 ## WikiSearch
 
