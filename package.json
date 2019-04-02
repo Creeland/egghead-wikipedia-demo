@@ -1,0 +1,15 @@
+{
+  "name": "egghead-wikipedia-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:eggheadio-projects/egghead-wikipedia-demo.git",
+  "author": "Cree <cree@provinsal.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "lessons/*"
+  ],
+  "scripts": {
+    "start": "echo test"
+  }
+}
